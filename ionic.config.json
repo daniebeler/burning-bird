@@ -1,0 +1,7 @@
+{
+  "name": "lemmy",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
