@@ -8,8 +8,16 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'local',
     pathMatch: 'full'
+  },
+  {
+    path: 'global',
+    loadChildren: () => import('./pages/global-timeline/global-timeline.module').then( m => m.GlobalTimelinePageModule)
+  },
+  {
+    path: 'local',
+    loadChildren: () => import('./pages/local-timeline/local-timeline.module').then( m => m.LocalTimelinePageModule)
   },
 ];
 

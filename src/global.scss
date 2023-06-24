@@ -25,6 +25,14 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
+::selection {
+  color: var(--ion-color-dark);
+  background: var(--ion-color-primary-tint);
+}
+
+/* ------------------------------------------------------- */
+/* Container */
+/* ------------------------------------------------------- */
 
 .container {
   padding-right: 15px;
@@ -50,4 +58,146 @@
   .container {
     width: 900px;
   }
+}
+
+
+/* ------------------------------------------------------- */
+/* General Elements */
+/* ------------------------------------------------------- */
+
+* {
+  font-family: "custom-medium", sans-serif;
+  color: var(--ion-color-light);
+}
+
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-family: "custom-bold", sans-serif;
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-family: "custom-bold", sans-serif;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline-color: var(--ion-color-primary);
+  outline-style: solid;
+  outline-width: 2px;
+}
+
+button:focus,
+img:focus {
+  outline: none;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 50px var(--ion-color-medium) inset;
+  -webkit-text-fill-color: var(--ion-color-light);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+
+/* ------------------------------------------------------- */
+/* Buttons */
+/* ------------------------------------------------------- */
+
+button {
+  ion-icon {
+    display: flex;
+    font-size: 1.2rem;
+  }
+}
+
+ion-icon {
+  display: flex;
+  font-size: 1.2rem;
+}
+
+.btn-small {
+  padding: 12px 12px 12px 12px;
+  border-radius: var(--border-radius-small);
+  font-size: 0.8em;
+  line-height: normal;
+}
+
+.btn-large {
+  padding: 15px 20px 15px 20px;
+  border-radius: var(--border-radius-small);
+  font-size: 0.9em;
+  line-height: normal;
+}
+
+.btn-primary {
+  background-color: var(--ion-color-primary);
+  color: var(--ion-color-dark);
+  * {
+    color: var(--ion-color-dark);
+  }
+}
+
+.btn-primary:hover {
+  background-color: var(--ion-color-primary-shade);
+}
+
+.btn-medium {
+  background-color: var(--ion-color-medium);
+}
+
+.btn-medium:hover {
+  background-color: var(--ion-color-medium-shade);
+}
+
+.btn-dark {
+  background-color: var(--ion-color-dark);
+}
+
+.btn-dark:hover {
+  background-color: var(--ion-color-dark-shade);
+}
+
+button:disabled,
+button:disabled:hover {
+  background-color: #9b9b9b;
+  color: #454545;
+}
+
+.btn-disabled {
+  background-color: var(--ion-color-medium)
+}
+
+.array-btn {
+  border: none;
+  border-radius: 100px;
+  outline: none;
+  padding: 10px 10px;
+  background-color: var(--ion-color-medium);
+  cursor: pointer;
+  margin: 5px;
+}
+
+.array-btn:hover {
+  background-color: var(--ion-color-medium-shade);
+}
+
+.array-btn.active {
+  color: var(--ion-color-light);
+  font-family: "custom-bold", sans-serif !important;
+}
+
+.array-btn.active:hover {
+  background-color: var(--ion-color-primary-shade);
 }

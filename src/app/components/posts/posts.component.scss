@@ -1,0 +1,29 @@
+ion-grid {
+  padding: 0;
+}
+
+.noideas-grid{
+  border-radius: var(--border-radius-big);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  padding-bottom: 30px;
+
+  h2 {
+    color: var(--ion-color-dark);
+  }
+}
+
+.active {
+  color: var(--ion-color-dark);
+}
+
+.header-col {
+  display: flex;
+  align-items: center;
+}
+
+.loading-col {
+  display: flex;
+  justify-content: center;
+}

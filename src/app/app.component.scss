@@ -1,0 +1,9 @@
+ion-split-pane {
+  --side-max-width: 200px;
+  --border: none;
+}
+
+.split-pane-visible >.split-pane-side {
+  min-width: 200px;
+  max-width: 200px;
+}

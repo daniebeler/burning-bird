@@ -17,8 +17,14 @@ export class ApiService {
     ) { }
 
 
-  getPosts(): Observable<Post[]> {
+  getPublicTimeline(): Observable<Post[]> {
     return this.httpClient.get<any>(baseUrl + 'api/v1/timelines/public').pipe(
+      map((res: any) => res.map((item: any) => this.postAdapter.adapt(item)))
+    );
+  }
+
+  getLocalTimeline(): Observable<Post[]> {
+    return this.httpClient.get<any>(baseUrl + 'api/v1/timelines/public?local=true').pipe(
       map((res: any) => res.map((item: any) => this.postAdapter.adapt(item)))
     );
   }
