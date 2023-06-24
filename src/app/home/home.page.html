@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-grid>
+  <ion-grid class="container">
     <ion-row *ngFor="let post of posts">
       <app-post [post]="post"></app-post>
     </ion-row>
