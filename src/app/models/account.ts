@@ -11,6 +11,7 @@ export class Account {
   public numberOfPosts: number;
   public numberOfFollowers: number;
   public numberOfFollowing: number;
+  public note: string;
 
   constructor(data?: any) {
     this.id = data?.id;
@@ -22,5 +23,6 @@ export class Account {
     this.numberOfPosts = data?.statuses_count;
     this.numberOfFollowers = data?.followers_count;
     this.numberOfFollowing = data?.following_count;
+    this.note = data?.note;
   }
 }

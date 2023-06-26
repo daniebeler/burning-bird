@@ -5,9 +5,8 @@
 
   <div
     class="fill"
-    [style.background-image]="'url(' + account.banner + ')'">
-</div>
-
+    [style.background-image]="'url(' + account.banner + ')'"
+  ></div>
 
   <ion-grid>
     <ion-row>
@@ -25,6 +24,12 @@
     </ion-row>
 
     <ion-row>
+      <ion-col>
+        <div [innerHTML]="account.note"></div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="stats-row">
       <ion-col>
         <h2>{{account.numberOfPosts}}</h2>
         <p>Posts</p>
