@@ -7,8 +7,8 @@
         </ion-avatar>
       </ion-col>
       <ion-col>
-        <p>{{post.account.username}}</p>
-        <p>{{post.account.acct}}</p>
+        <p class="name">{{post.account.display_name}}</p>
+        <p class="acct">{{post.account.acct}} • {{post.created_at | timeAgo}}</p>
       </ion-col>
     </ion-row>
 

@@ -6,17 +6,20 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PostsComponent } from './posts/posts.component';
+import { TimeAgoPipe } from '../pipes/time-ago.pipe';
 
 @NgModule({
   declarations: [
     PostComponent,
     SidebarComponent,
-    PostsComponent
+    PostsComponent,
+    TimeAgoPipe
   ],
   exports: [
     PostComponent,
     SidebarComponent,
-    PostsComponent
+    PostsComponent,
+    TimeAgoPipe
   ],
   imports: [
     IonicModule,
