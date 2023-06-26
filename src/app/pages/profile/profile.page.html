@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true">
+  <!-- <div class="banner-wrapper">
+    <img [src]="account.banner" />
+  </div> -->
+
+  <div
+    class="fill"
+    [style.background-image]="'url(' + account.banner + ')'">
+</div>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-avatar style="height: 60px; width: 60px; --border-radius: 50%">
+          <img [src]="account.avatar" />
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <h1>{{account.display_name}}</h1>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <h2>{{account.numberOfPosts}}</h2>
+        <p>Posts</p>
+      </ion-col>
+
+      <ion-col>
+        <h2>{{account.numberOfFollowing}}</h2>
+        <p>Following</p>
+      </ion-col>
+
+      <ion-col>
+        <h2>{{account.numberOfFollowers}}</h2>
+        <p>Followers</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -9,6 +9,11 @@
   margin: 0;
 }
 
+.name:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .acct {
   margin: 0;
     font-size: 0.9rem;

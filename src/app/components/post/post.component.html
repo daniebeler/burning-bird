@@ -7,7 +7,7 @@
         </ion-avatar>
       </ion-col>
       <ion-col>
-        <p class="name">{{post.account.display_name}}</p>
+        <p class="name" (click)="openProfile(post.account.acct)">{{post.account.display_name}}</p>
         <p class="acct">{{post.account.acct}} • {{post.created_at | timeAgo}}</p>
       </ion-col>
     </ion-row>

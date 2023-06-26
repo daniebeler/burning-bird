@@ -102,8 +102,17 @@ input:-webkit-autofill {
 }
 
 a {
-  text-decoration: none;
   color: white;
+  text-decoration: none;
+}
+
+app-post a {
+  text-decoration: none;
+  color: var(--ion-color-primary);
+
+  span {
+    color: var(--ion-color-primary);
+  }
 }
 
 a:hover {

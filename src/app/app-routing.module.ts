@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'local',
     loadChildren: () => import('./pages/local-timeline/local-timeline.module').then( m => m.LocalTimelinePageModule)
   },
+  {
+    path: 'profile/:acct',
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
+  },
 ];
 
 @NgModule({
