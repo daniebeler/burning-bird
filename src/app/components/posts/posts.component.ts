@@ -11,6 +11,7 @@ import { ApiService } from 'src/app/services/api.service';
 export class PostsComponent implements OnInit {
 
   @Input() mode = 'local';
+  @Input() user_id = 0;
 
   subscriptions: Subscription[] = [];
 
@@ -31,8 +32,11 @@ export class PostsComponent implements OnInit {
   getPosts(event?: any) {
     this.loading = true;
 
+    let olderTha = this.allLoadedPosts[this.allLoadedPosts.length-1]?.id;
+    console.log(olderTha);
+
     if (this.mode === 'global') {
-      this.subscriptions.push(this.apiService.getPublicTimeline().subscribe((posts: Post[]) => {
+      this.subscriptions.push(this.apiService.getPublicTimeline(olderTha).subscribe((posts: Post[]) => {
         event?.target.complete();
 
         for (const post of posts) {
@@ -44,7 +48,19 @@ export class PostsComponent implements OnInit {
     }
 
     if (this.mode === 'local') {
-      this.subscriptions.push(this.apiService.getLocalTimeline().subscribe((posts: Post[]) => {
+      this.subscriptions.push(this.apiService.getLocalTimeline(olderTha).subscribe((posts: Post[]) => {
+        event?.target.complete();
+
+        for (const post of posts) {
+          this.allLoadedPosts.push(post);
+        }
+
+        this.loading = false;
+      }));
+    }
+
+    if (this.mode === 'account') {
+      this.subscriptions.push(this.apiService.getAccountStatuses(this.user_id, olderTha).subscribe((posts: Post[]) => {
         event?.target.complete();
 
         for (const post of posts) {

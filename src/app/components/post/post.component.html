@@ -17,5 +17,15 @@
         <div class="postcontent" [innerHTML]=post.content></div>
       </ion-col>
     </ion-row>
+
+    <ion-row>
+      <ion-col style="padding: 0;">
+        <div class="boosts">
+          <p>
+            {{post.reblogs_count}}
+          </p>
+        </div>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 </div>

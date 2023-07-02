@@ -3,12 +3,19 @@
     <img [src]="account.banner" />
   </div> -->
 
-  <div
-    class="fill"
-    [style.background-image]="'url(' + account.banner + ')'"
-  ></div>
 
-  <ion-grid>
+
+  <ion-grid *ngIf="account" class="container">
+
+    <ion-row *ngIf="account.banner" class="banner-row">
+      <ion-col>
+        <div
+        class="fill"
+        [style.background-image]="'url(' + account.banner + ')'"
+      ></div>
+      </ion-col>
+    </ion-row>
+
     <ion-row>
       <ion-col>
         <ion-avatar style="height: 60px; width: 60px; --border-radius: 50%">
@@ -43,6 +50,12 @@
       <ion-col>
         <h2>{{account.numberOfFollowers}}</h2>
         <p>Followers</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="account.id">
+      <ion-col>
+        <app-posts mode="account" [user_id]="account.id"></app-posts>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -8,6 +8,8 @@ export class Post {
   public account: Account;
   public created_at: Date;
   public media_attachments: MediaAttachment[];
+  public replies_count: number;
+  public reblogs_count: number;
 
   constructor(data?: any) {
     this.id = data?.id;
@@ -15,5 +17,7 @@ export class Post {
     this.account = data?.account;
     this.created_at = data?.created_at;
     this.media_attachments = data?.media_attachments;
+    this.replies_count = data?.replies_count;
+    this.reblogs_count = data?.reblogs_count;
   }
 }

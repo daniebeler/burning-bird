@@ -11,7 +11,7 @@ import { ApiService } from 'src/app/services/api.service';
 export class ProfilePage implements OnInit {
 
   acct: any = ''
-  account: Account = new Account();
+  account: Account | null = null;
 
   constructor(
     private activatedRoute: ActivatedRoute,

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PostAdapter } from '../adapter/post-adapter';
-import { Observable, concatMap, of, map } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Post } from '../models/post';
 import { Account } from '../models/account';
 import { AccountAdapter } from '../adapter/account-adapter';
@@ -20,14 +20,35 @@ export class ApiService {
     ) { }
 
 
-  getPublicTimeline(): Observable<Post[]> {
-    return this.httpClient.get<any>(baseUrl + 'api/v1/timelines/public').pipe(
+  getPublicTimeline(olderThan?: number): Observable<Post[]> {
+    let olderThanQuery = ''
+    if (olderThan) {
+      olderThanQuery = '?max_id=' + olderThan;
+    }
+
+    return this.httpClient.get<any>(baseUrl + 'api/v1/timelines/public' + olderThanQuery).pipe(
       map((res: any) => res.map((item: any) => this.postAdapter.adapt(item)))
     );
   }
 
-  getLocalTimeline(): Observable<Post[]> {
-    return this.httpClient.get<any>(baseUrl + 'api/v1/timelines/public?local=true').pipe(
+  getLocalTimeline(olderThan?: number): Observable<Post[]> {
+    let olderThanQuery = ''
+    if (olderThan) {
+      olderThanQuery = '&max_id=' + olderThan;
+    }
+
+    return this.httpClient.get<any>(baseUrl + 'api/v1/timelines/public?local=true' + olderThanQuery).pipe(
+      map((res: any) => res.map((item: any) => this.postAdapter.adapt(item)))
+    );
+  }
+
+  getAccountStatuses(accountId: number, olderThan?: number): Observable<Post[]> {
+    let olderThanQuery = ''
+    if (olderThan) {
+      olderThanQuery = '?max_id=' + olderThan;
+    }
+
+    return this.httpClient.get<any>(baseUrl + 'api/v1/accounts/' + accountId + '/statuses' + olderThanQuery).pipe(
       map((res: any) => res.map((item: any) => this.postAdapter.adapt(item)))
     );
   }
