@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'profile/:acct',
     loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
   },
+  {
+    path: 'trending',
+    loadChildren: () => import('./pages/trending/trending.module').then( m => m.TrendingPageModule)
+  },
 ];
 
 @NgModule({

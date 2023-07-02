@@ -14,10 +14,7 @@ export class PostsComponent implements OnInit {
   @Input() user_id = 0;
 
   subscriptions: Subscription[] = [];
-
-  postFetchSize = 20;
   allLoadedPosts: Post[] = [];
-  skipPosts = 0;
 
   loading = true;
 
@@ -59,6 +56,19 @@ export class PostsComponent implements OnInit {
       }));
     }
 
+    if (this.mode === 'trending') {
+      const offset = this.allLoadedPosts.length;
+      this.subscriptions.push(this.apiService.getTrendingStatuses(offset).subscribe((posts: Post[]) => {
+        event?.target.complete();
+
+        for (const post of posts) {
+          this.allLoadedPosts.push(post);
+        }
+
+        this.loading = false;
+      }));
+    }
+
     if (this.mode === 'account') {
       this.subscriptions.push(this.apiService.getAccountStatuses(this.user_id, olderTha).subscribe((posts: Post[]) => {
         event?.target.complete();
@@ -70,10 +80,6 @@ export class PostsComponent implements OnInit {
         this.loading = false;
       }));
     }
-
-    this.skipPosts = this.skipPosts + this.postFetchSize;
-
-
   }
 
   loadData(event: any) {

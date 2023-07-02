@@ -46,6 +46,14 @@
           </a>
         </ion-col>
       </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <a routerLink="/trending" class="btn-a btn-small" [ngClass]="{'btn-active': router.url === '/trending'}">
+            <ion-icon name="trending-up-outline"></ion-icon>Trending Posts
+          </a>
+        </ion-col>
+      </ion-row>
     </div>
 
     <!-- <div *ngIf="user">

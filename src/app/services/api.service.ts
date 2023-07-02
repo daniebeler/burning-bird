@@ -42,6 +42,12 @@ export class ApiService {
     );
   }
 
+  getTrendingStatuses(offset: number): Observable<Post[]> {
+    return this.httpClient.get<any>(baseUrl + 'api/v1/trends/statuses?offset=' + offset).pipe(
+      map((res: any) => res.map((item: any) => this.postAdapter.adapt(item)))
+    );
+  }
+
   getAccountStatuses(accountId: number, olderThan?: number): Observable<Post[]> {
     let olderThanQuery = ''
     if (olderThan) {

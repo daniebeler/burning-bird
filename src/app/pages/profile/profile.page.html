@@ -1,10 +1,4 @@
 <ion-content [fullscreen]="true">
-  <!-- <div class="banner-wrapper">
-    <img [src]="account.banner" />
-  </div> -->
-
-
-
   <ion-grid *ngIf="account" class="container">
 
     <ion-row *ngIf="account.banner" class="banner-row">
@@ -18,7 +12,7 @@
 
     <ion-row>
       <ion-col>
-        <ion-avatar style="height: 60px; width: 60px; --border-radius: 50%">
+        <ion-avatar class="profilepic">
           <img [src]="account.avatar" />
         </ion-avatar>
       </ion-col>
@@ -26,7 +20,7 @@
 
     <ion-row>
       <ion-col>
-        <h1>{{account.display_name}}</h1>
+        <h1 class="name">{{account.display_name}}</h1>
       </ion-col>
     </ion-row>
 
