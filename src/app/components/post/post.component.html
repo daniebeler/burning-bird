@@ -18,13 +18,27 @@
       </ion-col>
     </ion-row>
 
-    <ion-row>
-      <ion-col style="padding: 0;">
-        <div class="boosts">
-          <p>
-            {{post.reblogs_count}}
-          </p>
-        </div>
+    <ion-row class="interaction-row">
+
+      <ion-col size="auto">
+        <button type="button" class="btn-small btn-dark">
+          <ion-icon name="repeat-outline"></ion-icon>
+          <p>{{post.reblogs_count}}</p>
+        </button>
+      </ion-col>
+
+      <ion-col size="auto">
+        <button type="button" class="btn-small btn-dark">
+          <ion-icon name="chatbubble-outline"></ion-icon>
+          <p>{{post.replies_count}}</p>
+        </button>
+      </ion-col>
+
+      <ion-col size="auto">
+        <button type="button" class="btn-small btn-dark">
+          <ion-icon name="heart-outline"></ion-icon>
+          <p>{{post.favourites_count}}</p>
+        </button>
       </ion-col>
     </ion-row>
   </ion-grid>

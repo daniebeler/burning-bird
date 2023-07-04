@@ -10,6 +10,7 @@ export class Post {
   public media_attachments: MediaAttachment[];
   public replies_count: number;
   public reblogs_count: number;
+  public favourites_count: number;
 
   constructor(data?: any) {
     this.id = data?.id;
@@ -19,5 +20,6 @@ export class Post {
     this.media_attachments = data?.media_attachments;
     this.replies_count = data?.replies_count;
     this.reblogs_count = data?.reblogs_count;
+    this.favourites_count = data?.favourites_count;
   }
 }

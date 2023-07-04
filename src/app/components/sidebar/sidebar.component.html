@@ -2,22 +2,33 @@
   <ion-grid class="wrapper-grid">
     <ion-row>
       <ion-col>
-        <a routerLink="/" style="display: flex; flex-direction:column; align-items: center">
+        <a
+          routerLink="/"
+          style="display: flex; flex-direction: column; align-items: center"
+        >
+          <img
+            src="../../../assets/images/logo-transparent-square.png"
+            style="width: 100%; padding-bottom: 10px"
+            alt=""
+            height="150"
+            width="150"
+          />
 
-          <img src="../../../assets/images/logo-transparent-square.png" style="width: 100%; padding-bottom: 10px;" alt="" height="150"
-        width="150">
-
-          <p style="text-align: center; margin-top: 10px;">Burning Bird</p>
+          <p style="text-align: center; margin-top: 10px">Burning Bird</p>
         </a>
       </ion-col>
     </ion-row>
 
-    <div style="padding-top: 50px;">
+    <div style="padding-top: 50px">
       <p class="subheadline">Explore</p>
 
       <ion-row>
         <ion-col>
-          <a routerLink="/local" class="btn-a btn-small" [ngClass]="{'btn-active': router.url === '/local'}">
+          <a
+            routerLink="/local"
+            class="btn-a btn-small"
+            [ngClass]="{ 'btn-active': router.url === '/local' }"
+          >
             <ion-icon name="people-outline"></ion-icon>Local Timeline
           </a>
         </ion-col>
@@ -25,7 +36,11 @@
 
       <ion-row>
         <ion-col>
-          <a routerLink="/global" class="btn-a btn-small" [ngClass]="{'btn-active': router.url === '/global'}">
+          <a
+            routerLink="/global"
+            class="btn-a btn-small"
+            [ngClass]="{ 'btn-active': router.url === '/global' }"
+          >
             <ion-icon name="earth-outline"></ion-icon>Global Timeline
           </a>
         </ion-col>
@@ -33,82 +48,34 @@
 
       <ion-row>
         <ion-col>
-          <a routerLink="/trending" class="btn-a btn-small" [ngClass]="{'btn-active': router.url === '/trending'}">
+          <a
+            routerLink="/trending"
+            class="btn-a btn-small"
+            [ngClass]="{ 'btn-active': router.url === '/trending' }"
+          >
             <ion-icon name="trending-up-outline"></ion-icon>Trending Posts
           </a>
         </ion-col>
       </ion-row>
     </div>
 
-    <!-- <div *ngIf="user">
-
-      <hr style="margin-bottom: 25px;">
-
-      <p class="subheadline">Contribute</p>
-      <ion-row>
-        <ion-col>
-          <a routerLink="/ideaeditor/new" class="btn-a btn-small"
-            [ngClass]="{'btn-active': router.url === '/ideaeditor/new'}">
-            <ion-icon name="flame-outline"></ion-icon>New Idea
-          </a>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          <a routerLink="/projecteditor/new" class="btn-a btn-small"
-            [ngClass]="{'btn-active': router.url === '/projecteditor/new'}">
-            <ion-icon name="hardware-chip-outline"></ion-icon>New Project
-          </a>
-        </ion-col>
-      </ion-row>
-    </div> -->
-
-    <!-- <div *ngIf="!user">
-
-      <hr style="margin-bottom: 25px;">
+    <div>
+      <hr style="margin-bottom: 25px" />
 
       <p class="subheadline">Login/Register</p>
-      <ion-row>
-        <ion-col>
-          <a routerLink="/register" class="btn-a btn-small"
-            [ngClass]="{'btn-active': router.url === '/register'}">
-            <ion-icon name="person-add-outline"></ion-icon>Register
-          </a>
-        </ion-col>
-      </ion-row>
 
       <ion-row>
         <ion-col>
-          <a routerLink="/login" class="btn-a btn-small"
-            [ngClass]="{'btn-active': router.url === '/login'}">
+          <a
+            routerLink="/login"
+            class="btn-a btn-small"
+            [ngClass]="{ 'btn-active': router.url === '/login' }"
+          >
             <ion-icon name="log-in-outline"></ion-icon>Login
           </a>
         </ion-col>
       </ion-row>
     </div>
-
-    <hr>
-
-    <div style="padding-top: 25px;">
-      <p class="subheadline">More</p>
-
-      <ion-row *ngIf="user">
-        <ion-col>
-          <a routerLink="settings" class="btn-a btn-small" [ngClass]="{'btn-active': router.url === '/settings'}">
-            <ion-icon name="settings-outline"></ion-icon>Settings
-          </a>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          <a routerLink="about" class="btn-a btn-small" [ngClass]="{'btn-active': router.url === '/about'}">
-            <ion-icon name="information-circle-outline"></ion-icon>About
-          </a>
-        </ion-col>
-      </ion-row>
-    </div> -->
   </ion-grid>
 
   <!-- <div class="bottom-item" *ngIf="user">

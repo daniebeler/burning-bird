@@ -23,3 +23,23 @@ ion-grid {
     font-size: 0.9rem;
     color: gray;
 }
+
+.interaction-row {
+  // display: flex;
+  // justify-content: space-evenly;
+
+  margin-top: 5px;
+
+  ion-col {
+    padding-bottom: 0;
+  }
+
+  button {
+    display: flex;
+
+    p {
+      padding-left: 8px;
+      margin: 0;
+    }
+  }
+}

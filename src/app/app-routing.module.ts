@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'trending',
     loadChildren: () => import('./pages/trending/trending.module').then( m => m.TrendingPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
 ];
 
 @NgModule({
