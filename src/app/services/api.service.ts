@@ -84,6 +84,12 @@ export class ApiService {
     );
   }
 
+  getAccountById(id: string): Observable<Account> {
+    return this.httpClient.get<any>(baseUrl + 'api/v1/accounts/' + id).pipe(
+      map((item: any) => this.accountAdapter.adapt(item))
+    );
+  }
+
 
   registerApplication(): Observable<any> {
     const formData = {
@@ -130,6 +136,6 @@ export class ApiService {
     console.log('Headers: ' + headers)
     console.log()
 
-    return this.httpClient.get<any>(baseUrl + 'api/v1/apps/verify_credentials',  {headers});
+    return this.httpClient.get<any>(baseUrl + 'api/v1/accounts/verify_credentials',  {headers});
   }
 }

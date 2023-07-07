@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Account } from 'src/app/models/account';
+import { AuthService } from 'src/app/services/auth.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,10 +11,23 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent  implements OnInit {
 
+  authState: boolean;
+  user: Account;
+
   constructor(
-    public router: Router
+    public router: Router,
+    private authService: AuthService,
+    private userService: UserService
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.authService.authenticationState.subscribe(authState => {
+      this.authState = authState;
+    })
+
+    this.userService.getLatestUser().subscribe(user => {
+      this.user = user;
+    })
+  }
 
 }

@@ -59,7 +59,7 @@
       </ion-row>
     </div>
 
-    <div>
+    <div *ngIf="!authState">
       <hr style="margin-bottom: 25px" />
 
       <p class="subheadline">Login/Register</p>
@@ -78,13 +78,13 @@
     </div>
   </ion-grid>
 
-  <!-- <div class="bottom-item" *ngIf="user">
+  <div class="bottom-item" *ngIf="user">
     <ion-grid>
       <ion-row>
         <ion-col>
-          <a [routerLink]="'/users/' + user.username">
+          <a [routerLink]="'/profile/' + user.acct">
             <ion-avatar style="height: 30px; width: 30px; --border-radius: var(--border-radius-small)">
-              <img [src]="user.profileimage">
+              <img [src]="user.avatar">
             </ion-avatar>
             <p style="margin-bottom: 0; padding-left: 8px;">{{user.username}}</p>
           </a>
@@ -92,5 +92,5 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-  </div> -->
+  </div>
 </div>
