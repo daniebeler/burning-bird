@@ -61,6 +61,19 @@ export class ApiService {
     );
   }
 
+  getHomeTimeline(olderThan?: number): Observable<Post[]> {
+    let olderThanQuery = ''
+    if (olderThan) {
+      olderThanQuery = '?max_id=' + olderThan;
+    }
+
+    const headers: HttpHeaders = this.getHeader();
+
+    return this.httpClient.get<any>(baseUrl + 'api/v1/timelines/home' + olderThanQuery, { headers }).pipe(
+      map((res: any) => res.map((item: any) => this.postAdapter.adapt(item)))
+    );
+  }
+
   getTrendingStatuses(offset: number): Observable<Post[]> {
     return this.httpClient.get<any>(baseUrl + 'api/v1/trends/statuses?offset=' + offset).pipe(
       map((res: any) => res.map((item: any) => this.postAdapter.adapt(item)))

@@ -22,6 +22,18 @@
     <div style="padding-top: 50px">
       <p class="subheadline">Explore</p>
 
+      <ion-row *ngIf="user">
+        <ion-col>
+          <a
+            routerLink="/home"
+            class="btn-a btn-small"
+            [ngClass]="{ 'btn-active': router.url === '/home' }"
+          >
+            <ion-icon name="home-outline"></ion-icon>Home Timeline
+          </a>
+        </ion-col>
+      </ion-row>
+
       <ion-row>
         <ion-col>
           <a

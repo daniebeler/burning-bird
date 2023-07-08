@@ -69,6 +69,18 @@ export class PostsComponent implements OnInit {
       }));
     }
 
+    if (this.mode === 'home') {
+      this.subscriptions.push(this.apiService.getHomeTimeline(olderTha).subscribe((posts: Post[]) => {
+        event?.target.complete();
+
+        for (const post of posts) {
+          this.allLoadedPosts.push(post);
+        }
+
+        this.loading = false;
+      }));
+    }
+
     if (this.mode === 'account') {
       this.subscriptions.push(this.apiService.getAccountStatuses(this.user_id, olderTha).subscribe((posts: Post[]) => {
         event?.target.complete();
