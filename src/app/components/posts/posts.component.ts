@@ -77,6 +77,8 @@ export class PostsComponent implements OnInit {
           this.allLoadedPosts.push(post);
         }
 
+        console.log(this.allLoadedPosts)
+
         this.loading = false;
       }));
     }

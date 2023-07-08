@@ -18,6 +18,12 @@
       </ion-col>
     </ion-row>
 
+    <ion-row class="media-row">
+      <ion-col *ngFor="let image of post.media_attachments">
+        <img [src]="image.url">
+      </ion-col>
+    </ion-row>
+
     <ion-row class="interaction-row">
 
       <ion-col size="auto">

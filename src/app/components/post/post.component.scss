@@ -25,8 +25,6 @@ ion-grid {
 }
 
 .interaction-row {
-  // display: flex;
-  // justify-content: space-evenly;
 
   margin-top: 5px;
 
@@ -41,5 +39,11 @@ ion-grid {
       padding-left: 8px;
       margin: 0;
     }
+  }
+}
+
+.media-row {
+  img {
+    border-radius: var(--border-radius-small);
   }
 }
